@@ -27,7 +27,6 @@ module.exports = {
       options: {
         name: 'learn',
         path: `${__dirname}/src/documentation/`,
-        include: ['**/*.md'], // ignore files starting with a dot
       },
     },
     {
@@ -42,7 +41,13 @@ module.exports = {
       options: {
         name: 'homepage',
         path: `${__dirname}/content/homepage`,
-        include: ['**/*.md'], // ignore files starting with a dot
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'community',
+        path: `${__dirname}/content/community`,
       },
     },
     {
@@ -99,6 +104,7 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590,
+              backgroundColor: 'transparent',
             },
           },
         ],
